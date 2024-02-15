@@ -1,9 +1,9 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
-import MyNavbar from "@/components/MyNavbar";
-import MyFooter from "@/components/MyFooter";
 
 import { SessionProvider } from "next-auth/react";
+import MyFooter from "@/components/MyFooter";
+import MyNavbar from "@/components/MyNavbar";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
