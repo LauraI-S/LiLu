@@ -178,7 +178,7 @@ function MyNavbar() {
               Signup
             </Link>
           </div>
-        )}{" "}
+        )}
       </div>
     </div>
   );
