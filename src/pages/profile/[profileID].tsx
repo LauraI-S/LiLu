@@ -10,12 +10,12 @@ const Profile = () => {
   const [profile, setProfile] = useState({
     name: user?.name,
     email: user?.email,
-    dueDate: Date(),
+    dueDate: "2024-05-29T00:00:00.000+00:00",
     babyBorn: false,
   });
 
   const formatDate = (date: Date | string) => {
-    const formattedDate = new Date(date).toLocaleDateString("en-US");
+    const formattedDate = new Date(date).toLocaleDateString("en-GB");
     return formattedDate;
   };
 

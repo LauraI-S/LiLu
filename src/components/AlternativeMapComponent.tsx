@@ -286,12 +286,12 @@ export default function AlternativeMap() {
               >
                 Use My current Location
               </button>
-              <button
+              {/* <button
                 onClick={fetchNearbyHospitals}
                 className="flex-1 bg-red-300 text-white font-semibold text-sm py-1 px-3 rounded-md hover:bg-red-500 focus:outline-none"
               >
                 Show Nearest Hospitals
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
@@ -350,7 +350,7 @@ export default function AlternativeMap() {
           ))}
         </MapContainer>
       </div>
-      <h2>create dropdowns and checkboxes for querying data </h2>
+      {/* <h2>create dropdowns and checkboxes for querying data </h2> */}
     </div>
   );
 }

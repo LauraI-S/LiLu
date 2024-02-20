@@ -29,11 +29,11 @@ function MyNavbar() {
   };
 
   const logout = async () => {
-    window.confirm("Are you sure you want to log out?");
-    await signOut({ redirect: false });
-    setUser(null);
-    await router.push("/");
-    location.reload();
+    if (window.confirm("Are you sure you want to log out?")) {
+      await signOut({ redirect: false });
+      await router.push("/");
+      location.reload();
+    }
   };
 
   return (

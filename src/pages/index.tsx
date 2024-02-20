@@ -6,6 +6,7 @@ import Image from "next/image";
 import Script from "next/script";
 import logo from "../images/logo.jpg";
 import { useSession } from "next-auth/react";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -46,35 +47,31 @@ function Home() {
         </div>
 
         <div className="bg-red-50 50 p-8">
-          <Image src={BabyImage} alt="My Image" className="rounded-full" />
-
-          <p className="text-lg">
-            Whether you're an expecting parent or a caregiver, LiLu is here to
-            support you on your journey. We're like your virtual midwife,
-            providing guidance and resources every step of the way.
-          </p>
-          <p className="text-lg mt-4">Here's what you can do with LiLu:</p>
-          <ul className="list-disc list-inside text-lg mt-2">
-            <li>
-              Find the nearest hospitals and midwives -{" "}
-              <a href="/map" className="text-blue-500 underline">
-                Explore Maps
-              </a>
-            </li>
-            <li>
+          <Image src={BabyImage} alt="My Image" className="rounded-full mb-4" />
+          <div className="flex text-black flex-col items-center">
+            <p className="text-lg mt-4">Here's what you can do with LiLu:</p>
+            <br />
+            <Link
+              href="/alternativemap"
+              className="flex-1 text-black bg-blue-200 text-white font-semibold text-sm py-1 px-3 rounded-md hover:bg-blue-600 focus:outline-none"
+            >
+              Explore Maps
+            </Link>
+            <br />
+            {/* <li>
               Get your pregnancy questions answered by approved midwives -{" "}
-              <a href="/questions" className="text-blue-500 underline">
+              <Link href="/questions" className="text-blue-500 underline">
                 Ask Questions
-              </a>
-            </li>
-            <li>
-              Access best practice tips from our expert midwifery and doctors
-              team -{" "}
-              <a href="/tips" className="text-blue-500 underline">
-                Browse our Tips
-              </a>
-            </li>
-          </ul>
+              </Link>
+            </li> */}
+
+            <Link
+              href="/tips"
+              className="flex-1 text-black bg-red-200 text-white font-semibold text-sm py-1 px-3 rounded-md hover:bg-blue-600 focus:outline-none"
+            >
+              Browse our Tips
+            </Link>
+          </div>
         </div>
       </div>
     </>

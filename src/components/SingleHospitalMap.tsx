@@ -26,8 +26,10 @@ function SingleHospitalMap({ hospital, userLocation }: SingleHospitalMapProps) {
     userLocation.longitude || 13.405,
   ] as LatLngExpression;
 
-  console.log("hospital :>> ", hospital);
+  // console.log("hospital :>> ", hospital);
   const fillRedOptions = { fillColor: "red" };
+  // console.log("typeof  :>> ", typeof getDistance);
+
   return (
     // <div style={{ display: "flex", flexDirection: "column" }}>
     <div className="flex-col bg-red">

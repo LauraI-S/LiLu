@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ListOfHospitals from "../components/ListOfHospitals";
 import useCalculateDistanceToHospitals from "../utils/useCalculateDistanceToHospitals";
+import { Location } from "@/components/AlternativeMapComponent";
 
 function HospitalsPage() {
+  const [userLocation, setUserLocation] = useState<Location>({} as Location);
   //1.7km according to google maps
   // const location1 = [52.47304137480423, 13.425472026026231]
   // const location2 = [52.48656925572065, 13.424486699004747]
@@ -15,9 +17,27 @@ function HospitalsPage() {
 
   // console.log("distance final :>> ", distance);
 
+  const getUserLocation = async () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+      console.log("Geolocation not supported");
+    }
+  };
+
+  const showPosition = async (position) => {
+    const { latitude, longitude } = position.coords;
+    console.log("position.coords :>> ", position.coords);
+    setUserLocation({ latitude: latitude, longitude: longitude });
+  };
+
+  useEffect(() => {
+    getUserLocation();
+  }, []);
+
   return (
     <div>
-      <ListOfHospitals />
+      <ListOfHospitals userLocation={userLocation} />
     </div>
   );
 }

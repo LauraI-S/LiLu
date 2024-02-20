@@ -8,12 +8,12 @@ function useCalculateDistanceToHospitals(
   hospitalLocationCoords,
   userLocationCoords
 ) {
-  console.log(
-    "hospitalLocationCoords",
-    hospitalLocationCoords,
-    "userLocationCoords",
-    userLocationCoords
-  );
+  // console.log(
+  //   "hospitalLocationCoords",
+  //   hospitalLocationCoords,
+  //   "userLocationCoords",
+  //   userLocationCoords
+  // );
   const [distance, setDistance] = useState(0);
   const [lat1, lon1] = hospitalLocationCoords;
   const [lat2, lon2] = userLocationCoords;
